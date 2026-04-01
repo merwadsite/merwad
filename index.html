@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Merwad Abdallah — Design Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --off-white: #f5f5f3;
+      --warm-gray: #eeebe6;
+      --magenta: #CC0066;
+      --magenta-dark: #A3004F;
+      --text-secondary: #555555;
+      --text-tertiary: #999999;
+      --border-light: #e0e0e0;
+      --cap-bg: #eeebe6;
+      --font-serif: 'Roboto Slab', Georgia, serif;
+      --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0 2.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-wordmark {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-wordmark span { color: var(--magenta); }
+
+    .nav-links {
+      display: flex;
+      gap: 0;
+      align-items: center;
+    }
+
+    .nav-link { position: relative;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      padding: 8px 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+
+    .nav-link:hover { color: var(--white); }
+
+    .nav-link--active {
+      color: var(--white);
+    }
+
+    .nav-link--active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--magenta);
+      border-radius: 1px 1px 0 0;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .nav-link--active:hover::after {
+      opacity: 1;
+    }
+
+    .nav-link--active.nav-link--current::after {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--magenta);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 2px;
+      margin-left: 8px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--magenta-dark); }
+
+    /* ── Hero — Option C: dark field, photo texture edge, magenta rule ── */
+    /*
+      TO ADD YOUR PHOTO: replace the value of --hero-image below
+      with the path to your image file, e.g. url('hero-photo.jpg')
+      The image will appear as a subtle texture on the right edge only.
+    */
+    :root {
+      --hero-image: url('hero-triangles.png');
+    }
+
+    .hero {
+      position: relative;
+      background: #0a0a0a;
+      overflow: hidden;
+      padding: 6rem 2.5rem 5.5rem;
+    }
+
+    /* Right-edge texture band — shows photo when --hero-image is set */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--hero-image);
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    /* Gradient overlay: dark on left for text, fades out toward right */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        #0a0a0a 0%,
+        #0a0a0a 20%,
+        rgba(10,10,10,0.8) 40%,
+        rgba(10,10,10,0.3) 65%,
+        rgba(10,10,10,0.05) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Magenta rule anchoring the bottom edge */
+    .hero-rule {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--magenta);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--magenta);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--magenta);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      max-width: 780px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--magenta);
+    }
+
+    /* ── About strip ── */
+    .about {
+      border-bottom: 1px solid var(--border-light);
+      padding: 5rem 2.5rem;
+    }
+
+    .about-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-intro {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    .about-chapters {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .about-chapter-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--magenta);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .about-chapter-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border: 1.5px solid var(--magenta);
+      border-radius: 1px;
+      flex-shrink: 0;
+    }
+
+    .about-chapter-body {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .about-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 24px;
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+      border-radius: 2px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--magenta);
+      border-color: var(--magenta);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 24px;
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--border-light);
+      border-radius: 2px;
+      transition: border-color 0.15s;
+    }
+
+    .btn-secondary:hover { border-color: var(--black); }
+
+    /* Capabilities sidebar — warm gray card containers */
+    .cap-section {
+      background: var(--cap-bg);
+      padding: 1.25rem 1.25rem 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .cap-section:last-child { margin-bottom: 0; }
+
+    .cap-section-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .cap-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .cap-list li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+
+    .cap-list li::before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid var(--magenta);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ── Work section ── */
+    .section {
+      padding: 5rem 2.5rem;
+    }
+
+    .section-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--black);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+
+    /* ── Project grid ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-light);
+      border: 1px solid var(--border-light);
+      margin-bottom: 1px;
+    }
+
+    .project-card {
+      background: var(--white);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.15s;
+    }
+
+    .project-card:hover { background: var(--off-white); }
+
+    .project-card:hover .project-arrow {
+      transform: translateX(4px);
+      color: var(--magenta);
+    }
+
+    .project-thumb {
+      aspect-ratio: 16 / 9;
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .project-thumb:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Colour wash overlay */
+    .project-thumb .thumb-wash {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .thumb-wash {
+      opacity: 0.7;
+    }
+
+    /* Teal wash — CIBC projects */
+    .thumb-wash-teal { background: rgba(20, 130, 130, 0.65); }
+
+    /* Slate blue wash — TD projects */
+    .thumb-wash-green { background: rgba(45, 75, 130, 0.6); }
+
+    /* Dark wash — non-bank projects (already designed covers) */
+    .thumb-wash-dark { background: rgba(10, 10, 10, 0.25); }
+
+    .project-thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-thumb-placeholder svg {
+      width: 44px;
+      height: 44px;
+      color: var(--border-light);
+    }
+
+    .project-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-discipline {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .project-discipline-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--magenta);
+    }
+
+    .project-discipline-dot {
+      width: 2px;
+      height: 2px;
+      background: var(--border-light);
+      border-radius: 50%;
+    }
+
+    .project-year {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.03em;
+    }
+
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--black);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .project-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .project-tag {
+      font-size: 10px;
+      letter-spacing: 0.03em;
+      padding: 3px 8px;
+      background: var(--off-white);
+      color: var(--text-secondary);
+      border-radius: 2px;
+    }
+
+    .project-arrow {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      transition: transform 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+
+    /* ── Locked card state ── */
+    .project-card--locked {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .project-card--locked.unlocked {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .project-card--locked.unlocked:hover { background: var(--off-white); }
+    .project-card--locked.unlocked:hover .project-arrow {
+      transform: translateX(4px);
+      color: var(--magenta);
+    }
+
+    /* ── Work gate ── */
+    .work-gate {
+      margin: 2.5rem 0 0;
+      padding: 2rem;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      background: var(--off-white);
+    }
+
+    .work-gate-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .work-gate-inner svg {
+      color: var(--text-tertiary);
+    }
+
+    .work-gate-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    .work-gate-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .work-gate-input {
+      padding: 10px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: 3px;
+      font-size: 14px;
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--black);
+      width: 200px;
+    }
+
+    .work-gate-input:focus {
+      outline: none;
+      border-color: var(--magenta);
+    }
+
+    .work-gate-submit {
+      padding: 10px 18px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .work-gate-submit:hover { background: var(--magenta); }
+
+    .work-gate-error {
+      font-size: 12px;
+      color: var(--magenta);
+      min-height: 16px;
+    }
+
+    /* ── Divider between public / protected ── */
+    .work-divider {
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .work-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border-light);
+    }
+
+    .work-divider-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-align: center;
+      flex-shrink: 0;
+      max-width: 580px;
+    }
+
+    .work-divider-label svg { width: 13px; height: 15px; flex-shrink: 0; }
+
+    /* ── Lock notice ── */
+    .work-lock-notice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .work-lock-link {
+      color: var(--black);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+
+    .work-lock-link:hover { color: var(--magenta); }
+
+    /* ── CTA ── */
+    .cta {
+      background: var(--black);
+      padding: 5rem 2.5rem;
+    }
+
+    .cta-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .cta-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--magenta);
+      margin-bottom: 1rem;
+    }
+
+    .cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .cta-title em {
+      color: var(--magenta);
+      font-style: normal;
+    }
+
+    .cta-links {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 28px;
+      margin-top: 2rem;
+    }
+
+    .cta-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    .cta-link:hover { color: var(--white); }
+
+    .cta-link-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      color: var(--magenta);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 1.5rem 2.5rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text { font-size: 12px; color: var(--text-tertiary); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .capabilities-sidebar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+      .cap-section { margin-bottom: 0; }
+    }
+
+    @media (max-width: 860px) {
+      .project-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .capabilities-sidebar { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 540px) {
+      .hero { padding: 4rem 1.5rem 4rem; }
+      .about { padding: 3rem 1.5rem; }
+      .section { padding: 3rem 1.5rem; }
+      .project-grid { grid-template-columns: 1fr; }
+      .nav { padding: 0 1.5rem; }
+      .cta { padding: 3rem 1.5rem; }
+      .footer { padding: 1.5rem; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 560px) {
+
+      /* Nav */
+      .nav { padding: 0 1.25rem; }
+      .nav-inner { height: auto; min-height: 56px; flex-wrap: wrap; padding: 8px 0; }
+      .nav-brand { margin-right: auto; }
+      .nav-links { display: flex; flex-wrap: wrap; gap: 2px; width: 100%; margin-top: 4px; }
+      .nav-link { font-size: 10px; padding: 6px 8px; letter-spacing: 0.04em; }
+      .nav-cta { font-size: 10px; padding: 6px 12px; }
+
+      /* Hero */
+      .hero { min-height: 60vh; padding: 3rem 1.25rem; }
+      .hero-title { font-size: clamp(22px, 6vw, 36px) !important; }
+
+      /* About */
+      .about-grid { grid-template-columns: 1fr !important; }
+      .about-sidebar { display: none; }
+
+      /* Work section */
+      .work { padding: 3rem 1.25rem; }
+
+      /* CTA */
+      .cta { padding: 3rem 1.25rem; }
+      .cta-links { flex-direction: column; gap: 10px; }
+
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 22px !important; }
+      .nav-link { font-size: 9px; padding: 5px 6px; }
+      .nav-cta { font-size: 9px; padding: 5px 10px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-wordmark">Merwad<span>.</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link nav-link--active">Work</a>
+        <a href="https://troublemaker-in-residence.ghost.io" target="_blank" class="nav-link">Writing</a>
+        <a href="https://www.linkedin.com/in/merwad" target="_blank" class="nav-cta">LinkedIn →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-rule"></div>
+    <div class="hero-inner">
+      <p class="hero-label">Service &amp; Experience Design Leader</p>
+      <h1 class="hero-title">I ask <em>why</em> and for <em>whom</em>.<br>Otherwise, why build anything that's of no use to anyone?</h1>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section class="about">
+    <div class="about-inner">
+
+      <div>
+        <p class="about-intro">Twenty-five years, five chapters: Print, branding and advertising, a master's in strategic foresight, a steep learning curve into financial services, and now leading UX inside one of Canada's largest banks. Every chapter evolved how I think.</p>
+
+        <div class="about-chapters">
+
+          <div class="about-chapter">
+            <p class="about-chapter-title">Still asking the same question</p>
+            <p class="about-chapter-body">I completed a master's in Strategic Foresight &amp; Innovation while working full time, and researched how innovation actually survives inside large bureaucratic organizations. That question is the foundation of how I'm thinking about AI right now — not as a tool to deploy but as a shift that requires the same conditions as any meaningful change: the right people, the right questions, and someone willing to stay in the room long enough to get it right.</p>
+          </div>
+
+          <div class="about-chapter">
+            <p class="about-chapter-title">Seven years inside financial services</p>
+            <p class="about-chapter-body">First helping build a service design practice at CIBC, then leading a UX team at TD. I know what it takes to do this work inside organizations that weren't designed for it — you facilitate the right conversations, build trust along the way, and make the value of design legible to non-designers.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Capabilities sidebar -->
+      <div class="capabilities-sidebar">
+
+        <div class="cap-section">
+          <p class="cap-section-title">Design &amp; Delivery</p>
+          <ul class="cap-list">
+            <li>End-to-end service design</li>
+            <li>UX strategy &amp; digital experience</li>
+            <li>Journey mapping</li>
+          </ul>
+        </div>
+
+        <div class="cap-section">
+          <p class="cap-section-title">Leadership &amp; Organization</p>
+          <ul class="cap-list">
+            <li>Team formation &amp; mentorship</li>
+            <li>Practice building &amp; scaling</li>
+            <li>Community of practice leadership</li>
+          </ul>
+        </div>
+
+        <div class="cap-section">
+          <p class="cap-section-title">Strategy &amp; Systems</p>
+          <ul class="cap-list">
+            <li>Strategic foresight</li>
+            <li>AI integration &amp; change management</li>
+            <li>Executive stakeholder engagement</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Work ── -->
+  <section class="section">
+    <div class="section-inner">
+
+      <div id="work" class="section-header">
+        <div class="section-label">
+          <h2 class="section-title">The work</h2>
+        </div>
+      </div>
+
+      <!-- Lock notice -->
+      <div class="work-lock-notice">
+        <svg width="13" height="16" viewBox="0 0 11 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;color:var(--text-tertiary);">
+          <rect x="1" y="6" width="9" height="7.5" rx="1.5"/>
+          <path d="M3 6V4.2a2.5 2.5 0 015 0V6"/>
+          <circle cx="5.5" cy="9.5" r="0.9" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>This work is confidential. <a href="https://www.linkedin.com/in/merwad" target="_blank" class="work-lock-link">Get in touch</a> to arrange a walkthrough.</span>
+      </div>
+
+      <!-- All project cards -->
+      <div class="project-grid">
+
+        <div class="project-card project-card--locked" data-href="portfolio.html#gender">
+          <div class="project-thumb">
+            <img src="listening_circle_new_2.png" alt="Listening wasn't enough — gender equity project cover" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Service Design</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2021</span>
+              </div>
+              <h3 class="project-title">Listening wasn't enough. We designed for it.</h3>
+              <p class="project-desc">Service design applied to workplace gender equity. Redesigning listening circles to counter balance organizational power dynamics.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Org Design</span>
+                <span class="project-tag">Research</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-card--locked" data-href="portfolio.html#ratesetting">
+          <div class="project-thumb">
+            <img src="TD_cover_rate.png" alt="Rate Setting — hand signing financial documents" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">UX Delivery</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2023–2025</span>
+              </div>
+              <h3 class="project-title">Rate setting, reimagined</h3>
+              <p class="project-desc">Two colleague-facing tools — a GIC rate exception tool and a RESL mortgage rate platform — that became proof of what design-led thinking can unlock.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Design Sprint</span>
+                <span class="project-tag">Co-design</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-card--locked" data-href="portfolio.html#newcomer">
+          <div class="project-thumb">
+            <img src="cibc_covers_002.png" alt="Newcomer Strategy — parent and child" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Service Design</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2022</span>
+              </div>
+              <h3 class="project-title">Newcomers didn't need more information. They needed someone who'd been there.</h3>
+              <p class="project-desc">Research across three cultures and two continents led to a content strategy grounded in lived experience, not institutional messaging.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Multicultural Research</span>
+                <span class="project-tag">Ethnographic Research</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-card--locked" data-href="portfolio.html#savings">
+          <div class="project-thumb">
+            <img src="cibc_smart_savings.png" alt="Smart Savings — person holding savings jar" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Service Design</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2020</span>
+              </div>
+              <h3 class="project-title">The bank had a savings product. Clients had a savings problem.</h3>
+              <p class="project-desc">A year of ethnographic research on savings behaviour — and what it actually takes to help clients build better habits.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Behaviour Change</span>
+                <span class="project-tag">Prototype Testing</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-card--locked" data-href="portfolio.html#advisor">
+          <div class="project-thumb">
+            <img src="TD_cover_advisor.png" alt="Advisor Desktop — advisor and client reviewing documents together" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Strategy</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Advisor desktop modernization: A roadmap built from the field</h3>
+              <p class="project-desc">Research-based prioritization that surfaced a gap between what frontline advisors needed and what leadership assumed to be true.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Field Research</span>
+                <span class="project-tag">Prioritization</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-card--locked" data-href="portfolio.html#creditcard">
+          <div class="project-thumb">
+            <img src="TD_cover_credit_card.png" alt="Credit Card Onboarding — person completing application on phone" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">UX Delivery</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2024–2025</span>
+              </div>
+              <h3 class="project-title">Streamlined: The preapproved credit card onboarding</h3>
+              <p class="project-desc">Reducing a preapproved application from 8–10 pages to 2 — and setting a design standard that has since traveled across credit products.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Conversion</span>
+                <span class="project-tag">UX Audit</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-card--locked" data-href="portfolio.html#mortgage">
+          <div class="project-thumb">
+            <img src="cibc_mtg_loyalty.png" alt="Mortgage Loyalty — aerial view of suburban neighbourhood" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Service Design</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2022</span>
+              </div>
+              <h3 class="project-title">Mortgage loyalty & the signals we were missing</h3>
+              <p class="project-desc">Understanding why mortgage clients were leaving mid-term — and what the bank could do earlier to keep them.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Research</span>
+                <span class="project-tag">Call Listening</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card project-card--locked" data-href="portfolio.html#mrp">
+          <div class="project-thumb">
+            <img src="make_it_happen.jpg" alt="Colourful sticky notes on a wall from the Innovation in Large Organizations research project" loading="lazy">
+            <div class="thumb-wash thumb-wash-dark"></div>
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Research</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2018</span>
+              </div>
+              <h3 class="project-title">Innovation in Large Organizations</h3>
+              <p class="project-desc">Master of Design Major Research Project exploring why the gap between innovation intent and institutional reality exists — and what it takes to close it.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Systems Thinking</span>
+                <span class="project-tag">Research</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-card--locked" data-href="portfolio.html#precarious">
+          <div class="project-thumb">
+            <img src="precarious_growing_no_title_Page_01.png" alt="Precarious Growing — The Future of Food Production" loading="lazy">
+            <div class="thumb-wash thumb-wash-dark"></div>
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Foresight</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-year">2018</span>
+              </div>
+              <h3 class="project-title">Precarious growing: The future of food production</h3>
+              <p class="project-desc">Strategic foresight exploring the future of food production, directed towards investors in food growing &amp; distribution. Winner of 2018 APF Graduate Group Award.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="project-tag">Scenario Design</span>
+                <span class="project-tag">World-building</span>
+              </div>
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta">
+    <div class="cta-inner">
+      <p class="cta-label">Let's talk</p>
+      <h2 class="cta-title">The work is here.<br>I'd rather <em>explain it</em>.</h2>
+      <div class="cta-links">
+        <a href="https://www.linkedin.com/in/merwad" target="_blank" class="cta-link">
+          <svg class="cta-link-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <rect x="1" y="1" width="12" height="12" rx="2"/>
+            <line x1="4.5" y1="6" x2="4.5" y2="10.5"/>
+            <line x1="4.5" y1="4" x2="4.5" y2="4.5"/>
+            <path d="M7 10.5V7.5c0-1 .5-1.5 1.5-1.5s1.5.5 1.5 1.5v3"/>
+          </svg>
+          linkedin.com/in/merwad
+        </a>
+        <a href="https://troublemaker-in-residence.ghost.io" target="_blank" class="cta-link">
+          <svg class="cta-link-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M2 3h10M2 7h7M2 11h5"/>
+          </svg>
+          Writing on Ghost
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-text">Merwad Abdallah · Toronto</span>
+      <span class="footer-text">Service &amp; Experience Design Leader</span>
+    </div>
+  </footer>
+
+  <script>
+    function unlockCards() {
+      document.querySelectorAll('.project-card--locked').forEach(card => {
+        card.classList.remove('project-card--locked');
+        card.classList.add('unlocked');
+        const href = card.getAttribute('data-href');
+        if (href) {
+          card.addEventListener('click', () => { window.location.href = href; });
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (sessionStorage.getItem('portfolio_unlocked') === '1') {
+        // Already authenticated — wire cards directly to their sections
+        unlockCards();
+      } else {
+        // Not authenticated — clicking any card goes to portfolio.html
+        // where they can enter the password; hash is preserved so they
+        // land on the right section after unlocking
+        document.querySelectorAll('.project-card--locked').forEach(card => {
+          const href = card.getAttribute('data-href');
+          if (href) {
+            card.addEventListener('click', () => { window.location.href = href; });
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
