@@ -299,6 +299,18 @@
       line-height: 1.8;
     }
 
+    .about-link {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-color: var(--magenta);
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+
+    .about-link:hover {
+      color: var(--magenta);
+    }
+
     .about-actions {
       display: flex;
       gap: 12px;
@@ -523,13 +535,14 @@
     .project-discipline {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 7px;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 10px;
     }
 
     .project-discipline-tag {
       font-size: 10px;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--magenta);
@@ -542,10 +555,15 @@
       border-radius: 50%;
     }
 
-    .project-year {
+    .project-skill-tag {
       font-size: 10px;
-      color: var(--text-tertiary);
-      letter-spacing: 0.03em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 2px 7px;
+      background: var(--off-white);
+      color: var(--magenta);
+      border-radius: 2px;
+      border: 1px solid rgba(204,0,102,0.15);
     }
 
     .project-title {
@@ -570,21 +588,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-
-    .project-tag {
-      font-size: 10px;
-      letter-spacing: 0.03em;
-      padding: 3px 8px;
-      background: var(--off-white);
-      color: var(--text-secondary);
-      border-radius: 2px;
     }
 
     .project-arrow {
@@ -888,7 +891,6 @@
   <section class="hero">
     <div class="hero-rule"></div>
     <div class="hero-inner">
-      <p class="hero-label">Service &amp; Experience Design Leader</p>
       <h1 class="hero-title">I ask <em>why</em> and for <em>whom</em>.<br>Otherwise, why build anything that's of no use to anyone?</h1>
     </div>
   </section>
@@ -898,18 +900,23 @@
     <div class="about-inner">
 
       <div>
-        <p class="about-intro">Twenty-five years, five chapters: Print, branding and advertising, a master's in strategic foresight, a steep learning curve into financial services, and now leading UX inside one of Canada's largest banks. Every chapter evolved how I think.</p>
+        <p class="about-intro">Eight years inside two of Canada's Big Five banks — first at CIBC running end-to-end service design, then at TD leading UX delivery for digital financial products. Regulated environments, competing priorities, compliance constraints, and the constant work of keeping stakeholders aligned without losing what users actually need. I'm pretty great at it.</p>
 
         <div class="about-chapters">
 
           <div class="about-chapter">
             <p class="about-chapter-title">Still asking the same question</p>
-            <p class="about-chapter-body">The master's question was specific: why does innovation fail inside organizations that say they want it? I researched it while living it. That question hasn't left. It shapes how I run projects, build teams, and decide what's worth fighting for.</p>
+            <p class="about-chapter-body">The master's question was specific: why does innovation fail inside organizations that say they want it? I researched it while living it. Still am.</p>
           </div>
 
           <div class="about-chapter">
-            <p class="about-chapter-title">Seven years inside financial services</p>
-            <p class="about-chapter-body">First helping build a service design practice at CIBC, then leading a UX team at TD. Financial services isn't a natural habitat for design, so the conditions have to be created. That's most of the job.</p>
+            <p class="about-chapter-title">Learning to speak bank</p>
+            <p class="about-chapter-body">CIBC was where I learned how large institutions actually work — not the org chart, but the real map: who owns what, who needs to know what, where the decisions actually get made. That knowledge is as much a design tool as any method.</p>
+          </div>
+
+          <div class="about-chapter">
+            <p class="about-chapter-title">The here and now</p>
+            <p class="about-chapter-body">Critical thinking is part and parcel of design — uncovering core problems, following them to their source, and keeping the human outcome in frame the whole way. In financial services, the stakes of getting that wrong are material. With AI mediating more of those decisions, the question of who owns accountability when the system acts and nobody's watching the human outcome becomes urgent. My current work explores that gap: specifically, the case for design having <a href="https://troublemaker-in-residence.ghost.io/so-i-finally-wrote-it-down/" target="_blank" class="about-link">formal authority</a> — not advisory input, but an actual seat — at the AI governance table in regulated environments.</p>
           </div>
 
         </div>
@@ -921,27 +928,27 @@
         <div class="cap-section">
           <p class="cap-section-title">Design &amp; Delivery</p>
           <ul class="cap-list">
-            <li>End-to-end service design</li>
-            <li>UX strategy &amp; digital experience</li>
-            <li>Journey mapping</li>
+            <li>Led end-to-end UX delivery for regulated digital products across insurance, banking, and financial services</li>
+            <li>Introduced co-creative practices, reduced friction in high-stakes user flows</li>
+            <li>Improved conversion and adoption rates across digital platforms</li>
           </ul>
         </div>
 
         <div class="cap-section">
-          <p class="cap-section-title">Leadership &amp; Organization</p>
+          <p class="cap-section-title">Leadership &amp; People</p>
           <ul class="cap-list">
-            <li>Team formation &amp; mentorship</li>
-            <li>Practice building &amp; scaling</li>
-            <li>Community of practice leadership</li>
+            <li>Formed and led design teams inside large institutions</li>
+            <li>Created the conditions for the work to move fast when it needs to and slow down when the stakes require it</li>
+            <li>Know when each is which</li>
           </ul>
         </div>
 
         <div class="cap-section">
-          <p class="cap-section-title">Strategy &amp; Systems</p>
+          <p class="cap-section-title">Strategy &amp; Service Design</p>
           <ul class="cap-list">
-            <li>Strategic foresight</li>
-            <li>AI integration &amp; change management</li>
-            <li>Executive stakeholder engagement</li>
+            <li>Built service design foundations at CIBC — research, blueprints, channel documentation, stakeholder maps</li>
+            <li>At TD, service design background is what makes me useful when the conversation shifts from delivery to what should exist and why</li>
+            <li>Strategic foresight — published in Touchpoint Vol. 17, APF Graduate Group Award</li>
           </ul>
         </div>
 
@@ -973,102 +980,7 @@
       <!-- All project cards -->
       <div class="project-grid">
 
-        <div class="project-card project-card--locked" data-href="portfolio.html#gender">
-          <div class="project-thumb">
-            <img src="listening_circle_new_2.png" alt="Listening wasn't enough — gender equity project cover" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div>
-              <div class="project-discipline">
-                <span class="project-discipline-tag">Service Design</span>
-                <span class="project-discipline-dot"></span>
-                <span class="project-year">2021</span>
-              </div>
-              <h3 class="project-title">Listening wasn't enough. We designed for it.</h3>
-              <p class="project-desc">Service design applied to workplace gender equity. Redesigning listening circles to counter balance organizational power dynamics.</p>
-            </div>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Org Design</span>
-                <span class="project-tag">Research</span>
-              </div>
-              <span class="project-arrow">→</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card project-card--locked" data-href="portfolio.html#ratesetting">
-          <div class="project-thumb">
-            <img src="TD_cover_rate.png" alt="Rate Setting — hand signing financial documents" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div>
-              <div class="project-discipline">
-                <span class="project-discipline-tag">UX Delivery</span>
-                <span class="project-discipline-dot"></span>
-                <span class="project-year">2023–2025</span>
-              </div>
-              <h3 class="project-title">Rate setting, reimagined</h3>
-              <p class="project-desc">Two colleague-facing tools — a GIC rate exception tool and a RESL mortgage rate platform — that became proof of what design-led thinking can unlock.</p>
-            </div>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Design Sprint</span>
-                <span class="project-tag">Co-design</span>
-              </div>
-              <span class="project-arrow">→</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card project-card--locked" data-href="portfolio.html#newcomer">
-          <div class="project-thumb">
-            <img src="cibc_covers_002.png" alt="Newcomer Strategy — parent and child" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div>
-              <div class="project-discipline">
-                <span class="project-discipline-tag">Service Design</span>
-                <span class="project-discipline-dot"></span>
-                <span class="project-year">2022</span>
-              </div>
-              <h3 class="project-title">Newcomers didn't need more information. They needed someone who'd been there.</h3>
-              <p class="project-desc">Research across three cultures and two continents led to a content strategy grounded in lived experience, not institutional messaging.</p>
-            </div>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Multicultural Research</span>
-                <span class="project-tag">Ethnographic Research</span>
-              </div>
-              <span class="project-arrow">→</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card project-card--locked" data-href="portfolio.html#savings">
-          <div class="project-thumb">
-            <img src="cibc_smart_savings.png" alt="Smart Savings — person holding savings jar" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div>
-              <div class="project-discipline">
-                <span class="project-discipline-tag">Service Design</span>
-                <span class="project-discipline-dot"></span>
-                <span class="project-year">2020</span>
-              </div>
-              <h3 class="project-title">The bank had a savings product. Clients had a savings problem.</h3>
-              <p class="project-desc">A year of ethnographic research on savings behaviour — and what it actually takes to help clients build better habits.</p>
-            </div>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Behaviour Change</span>
-                <span class="project-tag">Prototype Testing</span>
-              </div>
-              <span class="project-arrow">→</span>
-            </div>
-          </div>
-        </div>
-
+        <!-- 1. Advisor Desktop -->
         <div class="project-card project-card--locked" data-href="portfolio.html#advisor">
           <div class="project-thumb">
             <img src="TD_cover_advisor.png" alt="Advisor Desktop — advisor and client reviewing documents together" loading="lazy">
@@ -1078,21 +990,19 @@
               <div class="project-discipline">
                 <span class="project-discipline-tag">Strategy</span>
                 <span class="project-discipline-dot"></span>
-                <span class="project-year">2024</span>
+                <span class="project-skill-tag">Field Research</span>
+                <span class="project-skill-tag">Executive Alignment</span>
               </div>
               <h3 class="project-title">Advisor desktop modernization: A roadmap built from the field</h3>
               <p class="project-desc">Research-based prioritization that surfaced a gap between what frontline advisors needed and what leadership assumed to be true.</p>
             </div>
             <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Field Research</span>
-                <span class="project-tag">Prioritization</span>
-              </div>
               <span class="project-arrow">→</span>
             </div>
           </div>
         </div>
 
+        <!-- 2. Credit Card -->
         <div class="project-card project-card--locked" data-href="portfolio.html#creditcard">
           <div class="project-thumb">
             <img src="TD_cover_credit_card.png" alt="Credit Card Onboarding — person completing application on phone" loading="lazy">
@@ -1102,21 +1012,107 @@
               <div class="project-discipline">
                 <span class="project-discipline-tag">UX Delivery</span>
                 <span class="project-discipline-dot"></span>
-                <span class="project-year">2024–2025</span>
+                <span class="project-skill-tag">Conversion Optimisation</span>
+                <span class="project-skill-tag">Pattern Design</span>
               </div>
-              <h3 class="project-title">Streamlined: The preapproved credit card onboarding</h3>
-              <p class="project-desc">Reducing a preapproved application from 8–10 pages to 2 — and setting a design standard that has since traveled across credit products.</p>
+              <h3 class="project-title">8 pages to 2 — and a pattern that traveled across the product line</h3>
+              <p class="project-desc">Reducing a preapproved application to its minimum viable form, and setting a design standard that has since traveled across credit products. $8M revenue tracked. 110% of forecast.</p>
             </div>
             <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Conversion</span>
-                <span class="project-tag">UX Audit</span>
-              </div>
               <span class="project-arrow">→</span>
             </div>
           </div>
         </div>
 
+        <!-- 3. Newcomer -->
+        <div class="project-card project-card--locked" data-href="portfolio.html#newcomer">
+          <div class="project-thumb">
+            <img src="cibc_covers_002.png" alt="Newcomer Strategy — parent and child" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Service Design</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-skill-tag">Multicultural Research</span>
+                <span class="project-skill-tag">Content Strategy</span>
+              </div>
+              <h3 class="project-title">Newcomers didn't need more information. They needed someone who'd been there.</h3>
+              <p class="project-desc">Research across three cultures and two continents led to a content strategy grounded in lived experience, not institutional messaging.</p>
+            </div>
+            <div class="project-footer">
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Listening Circles -->
+        <div class="project-card project-card--locked" data-href="portfolio.html#gender">
+          <div class="project-thumb">
+            <img src="listening_circle_new_2.png" alt="Listening wasn't enough — gender equity project cover" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Service Design</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-skill-tag">Organisational Design</span>
+                <span class="project-skill-tag">Psychological Safety</span>
+              </div>
+              <h3 class="project-title">Listening wasn't enough. We designed for it.</h3>
+              <p class="project-desc">Service design applied to workplace gender equity. Redesigning listening circles to counter balance organisational power dynamics.</p>
+            </div>
+            <div class="project-footer">
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Savings -->
+        <div class="project-card project-card--locked" data-href="portfolio.html#savings">
+          <div class="project-thumb">
+            <img src="cibc_smart_savings.png" alt="Smart Savings — person holding savings jar" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">Service Design</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-skill-tag">Behaviour Change</span>
+                <span class="project-skill-tag">Ethnographic Research</span>
+              </div>
+              <h3 class="project-title">The bank had a savings product. Clients had a savings problem.</h3>
+              <p class="project-desc">A year of ethnographic research on savings behaviour — and what it actually takes to help clients build better habits.</p>
+            </div>
+            <div class="project-footer">
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Rate Setting -->
+        <div class="project-card project-card--locked" data-href="portfolio.html#ratesetting">
+          <div class="project-thumb">
+            <img src="TD_cover_rate.png" alt="Rate Setting — hand signing financial documents" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+              <div class="project-discipline">
+                <span class="project-discipline-tag">UX Delivery</span>
+                <span class="project-discipline-dot"></span>
+                <span class="project-skill-tag">Colleague Experience</span>
+                <span class="project-skill-tag">Design Sprint</span>
+              </div>
+              <h3 class="project-title">Two colleague tools built through design sprints — and proof that the right process changes what gets adopted.</h3>
+              <p class="project-desc">A GIC rate exception tool and a RESL mortgage rate platform — built through design sprints, adopted by the colleagues who needed them most.</p>
+            </div>
+            <div class="project-footer">
+              <span class="project-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Mortgage -->
         <div class="project-card project-card--locked" data-href="portfolio.html#mortgage">
           <div class="project-thumb">
             <img src="cibc_mtg_loyalty.png" alt="Mortgage Loyalty — aerial view of suburban neighbourhood" loading="lazy">
@@ -1126,20 +1122,19 @@
               <div class="project-discipline">
                 <span class="project-discipline-tag">Service Design</span>
                 <span class="project-discipline-dot"></span>
-                <span class="project-year">2022</span>
+                <span class="project-skill-tag">Client Retention</span>
+                <span class="project-skill-tag">Loyalty Research</span>
               </div>
-              <h3 class="project-title">Mortgage loyalty & the signals we were missing</h3>
+              <h3 class="project-title">Mortgage loyalty: understanding why clients left before the bank knew to ask.</h3>
               <p class="project-desc">Understanding why mortgage clients were leaving mid-term — and what the bank could do earlier to keep them.</p>
             </div>
             <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Research</span>
-                <span class="project-tag">Call Listening</span>
-              </div>
               <span class="project-arrow">→</span>
             </div>
           </div>
         </div>
+
+        <!-- 8. MRP -->
         <div class="project-card project-card--locked" data-href="portfolio.html#mrp">
           <div class="project-thumb">
             <img src="make_it_happen.jpg" alt="Colourful sticky notes on a wall from the Innovation in Large Organizations research project" loading="lazy">
@@ -1150,21 +1145,19 @@
               <div class="project-discipline">
                 <span class="project-discipline-tag">Research</span>
                 <span class="project-discipline-dot"></span>
-                <span class="project-year">2018</span>
+                <span class="project-skill-tag">Innovation Research</span>
+                <span class="project-skill-tag">Academic</span>
               </div>
               <h3 class="project-title">Innovation in Large Organizations</h3>
               <p class="project-desc">Master of Design Major Research Project exploring why the gap between innovation intent and institutional reality exists — and what it takes to close it.</p>
             </div>
             <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Systems Thinking</span>
-                <span class="project-tag">Research</span>
-              </div>
               <span class="project-arrow">→</span>
             </div>
           </div>
         </div>
 
+        <!-- 9. Precarious Growing -->
         <div class="project-card project-card--locked" data-href="portfolio.html#precarious">
           <div class="project-thumb">
             <img src="precarious_growing_no_title_Page_01.png" alt="Precarious Growing — The Future of Food Production" loading="lazy">
@@ -1175,21 +1168,17 @@
               <div class="project-discipline">
                 <span class="project-discipline-tag">Foresight</span>
                 <span class="project-discipline-dot"></span>
-                <span class="project-year">2018</span>
+                <span class="project-skill-tag">Strategic Foresight</span>
+                <span class="project-skill-tag">Academic</span>
               </div>
               <h3 class="project-title">Precarious growing: The future of food production</h3>
               <p class="project-desc">Strategic foresight exploring the future of food production, directed towards investors in food growing &amp; distribution. Winner of 2018 APF Graduate Group Award.</p>
             </div>
             <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Scenario Design</span>
-                <span class="project-tag">World-building</span>
-              </div>
               <span class="project-arrow">→</span>
             </div>
           </div>
         </div>
-
 
       </div>
 

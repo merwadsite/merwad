@@ -620,7 +620,7 @@
     }
 
     .cs-page {
-      padding: 5rem 2.5rem 6rem;
+      padding: 2.5rem 2.5rem 6rem;
       border-bottom: 3px solid var(--black);
     }
 
@@ -675,6 +675,44 @@
 
     /* ── Divider — removed from within case studies, only used sparingly ── */
     .cs-divider { display: none; }
+
+    /* ── Case break — full-bleed visual separator between cases ── */
+    .case-break {
+      background: var(--black);
+      padding: 1.1rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .case-break-discipline {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--magenta);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .case-break-sep {
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      flex-shrink: 0;
+    }
+
+    .case-break-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .case-break-rule {
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      flex: 1;
+    }
 
     /* ── Stats ── */
     .cs-stats {
@@ -837,7 +875,7 @@
       .cs-stats { grid-template-columns: 1fr; }
       .cs-stat-num { font-size: 42px; }
       .cs-title { font-size: 22px; }
-      .cs-page { padding: 3rem 1.5rem 4.5rem; }
+      .cs-page { padding: 1.5rem 1.5rem 4.5rem; }
       .nav { padding: 0 1.5rem; }
       .page-hero { padding: 3rem 1.5rem 2.5rem; }
     }
@@ -845,7 +883,7 @@
     @media (max-width: 600px) {
       .cs-stats { grid-template-columns: 1fr; }
       .cs-stat-num { font-size: 42px; }
-      .cs-page { padding: 3rem 1.5rem 4.5rem; }
+      .cs-page { padding: 1.5rem 1.5rem 4.5rem; }
       .nav { padding: 0 1.5rem; }
       .page-hero { padding: 3rem 1.5rem 2.5rem; }
       .password-gate { padding: 0 1.5rem; margin: 3rem auto; }
@@ -874,7 +912,7 @@
       .subnav-item { font-size: 13px; padding: 8px 0; }
 
       /* Case studies */
-      .cs-page { padding: 2.5rem 1.25rem 3.5rem; }
+      .cs-page { padding: 1.25rem 1.25rem 3.5rem; }
       .cs-title { font-size: clamp(18px, 5vw, 26px) !important; }
       .cs-stats { grid-template-columns: 1fr; gap: 6px; }
       .cs-stat-num { font-size: 40px; }
@@ -988,13 +1026,20 @@
     </div>
   </div>
 
+  <div class="case-break">
+    <span class="case-break-discipline">UX Delivery</span>
+    <span class="case-break-sep">·</span>
+    <span class="case-break-name">ULOAN application</span>
+    <div class="case-break-rule"></div>
+  </div>
+
     <!-- ══════════════════════════════════════════
          ULOAN
     ══════════════════════════════════════════ -->
     <section class="cs-page" id="uloan">
     <div class="cs-wrap">
 
-      <p class="cs-label">UX Delivery — TD · 2024</p>
+      <p class="cs-label">TD · 2024</p>
       <h1 class="cs-title">ULOAN migration to EasyApply Evolution</h1>
       <p class="cs-sub">Migrating TD's legacy unsecured personal loan application to a new platform — and using the mandate as an opportunity to fix what was broken.</p>
 
@@ -1116,13 +1161,20 @@
     </div>
   </section>
 
+    <div class="case-break">
+      <span class="case-break-discipline">UX Delivery</span>
+      <span class="case-break-sep">·</span>
+      <span class="case-break-name">Preapproved credit card</span>
+      <div class="case-break-rule"></div>
+    </div>
+
     <!-- ══════════════════════════════════════════
          CREDIT CARD
     ══════════════════════════════════════════ -->
     <section class="cs-page" id="creditcard">
     <div class="cs-wrap">
 
-      <p class="cs-label">UX Delivery — TD · 2025–2026</p>
+      <p class="cs-label">TD · 2025–2026</p>
       <h1 class="cs-title">Streamlined: The preapproved credit card onboarding redesign</h1>
       <p class="cs-sub">Reducing a preapproved credit card application from 8-10 pages to 2 — and setting a design standard that has since traveled across the team's credit products.</p>
 
@@ -1200,13 +1252,20 @@
     </div>
   </section>
 
+    <div class="case-break">
+      <span class="case-break-discipline">Strategy</span>
+      <span class="case-break-sep">·</span>
+      <span class="case-break-name">Modernisation roadmap</span>
+      <div class="case-break-rule"></div>
+    </div>
+
     <!-- ══════════════════════════════════════════
          ADVISOR DESKTOP
     ══════════════════════════════════════════ -->
     <section class="cs-page" id="advisor">
     <div class="cs-wrap">
 
-      <p class="cs-label">Strategy — TD · 2024</p>
+      <p class="cs-label">TD · 2024</p>
       <h1 class="cs-title">Advisor desktop modernization:<br>A roadmap built from the field</h1>
       <p class="cs-sub">Research-based prioritization that surfaced a gap between what frontline advisors needed and what leadership assumed to be true.</p>
 
@@ -1322,10 +1381,17 @@
     </div>
   </section>
 
+    <div class="case-break">
+      <span class="case-break-discipline">UX Delivery</span>
+      <span class="case-break-sep">·</span>
+      <span class="case-break-name">Rate setting</span>
+      <div class="case-break-rule"></div>
+    </div>
+
 <section class="cs-page" id="ratesetting">
     <div class="cs-wrap">
 
-      <p class="cs-label">UX Delivery — Design Sprint — TD · 2023–2025</p>
+      <p class="cs-label">TD · 2023–2025</p>
       <h1 class="cs-title">Rate setting, reimagined:<br>From Excel to purpose-built tools</h1>
       <p class="cs-sub">Two connected projects — a GIC rate exception tool and a RESL mortgage rate change platform — both colleague-facing tools that became proof of what design-led thinking can unlock in terms of efficiency, competitive advantage, and safeguarding a large bank.</p>
 
@@ -1419,13 +1485,20 @@
     </div>
   </section>
 
+    <div class="case-break">
+      <span class="case-break-discipline">Service Design</span>
+      <span class="case-break-sep">·</span>
+      <span class="case-break-name">Mortgage renewals</span>
+      <div class="case-break-rule"></div>
+    </div>
+
     <!-- ══════════════════════════════════════════
          MORTGAGE LOYALTY
     ══════════════════════════════════════════ -->
     <section class="cs-page" id="mortgage">
     <div class="cs-wrap">
 
-      <p class="cs-label">Service Design — CIBC · 2023</p>
+      <p class="cs-label">CIBC · 2023</p>
       <h1 class="cs-title">When are we losing them?<br>Mortgage loyalty &amp; the signals we were missing</h1>
       <p class="cs-sub">A cross-organizational service design project to understand why mortgage clients were leaving CIBC mid-term — and what the bank could do earlier to keep them. Partnered with Enterprise Process Engineering to size each opportunity area quantitatively.</p>
 
@@ -1537,16 +1610,20 @@
     </div>
   </section>
 
+    <div class="case-break">
+      <span class="case-break-discipline">Service Design</span>
+      <span class="case-break-sep">·</span>
+      <span class="case-break-name">Enabling savings</span>
+      <div class="case-break-rule"></div>
+    </div>
+
     <!-- ══════════════════════════════════════════
-         STRATEGIC FUTURES
-    ══════════════════════════════════════════ -->
-        <!-- ══════════════════════════════════════════
          SAVINGS
     ══════════════════════════════════════════ -->
     <section class="cs-page" id="savings">
     <div class="cs-wrap">
 
-      <p class="cs-label">Service Design — CIBC · 2020</p>
+      <p class="cs-label">CIBC · 2020</p>
       <h1 class="cs-title">The bank had a savings product.<br>Clients had a savings problem.</h1>
       <p class="cs-sub">What a year of research revealed about savings behaviour — and what it takes to help clients build better habits.</p>
 
@@ -1643,13 +1720,20 @@
     </div>
   </section>
 
+    <div class="case-break">
+      <span class="case-break-discipline">Service Design</span>
+      <span class="case-break-sep">·</span>
+      <span class="case-break-name">Newcomer strategy</span>
+      <div class="case-break-rule"></div>
+    </div>
+
     <!-- ══════════════════════════════════════════
          NEWCOMER
     ══════════════════════════════════════════ -->
     <section class="cs-page" id="newcomer">
     <div class="cs-wrap">
 
-      <p class="cs-label">Service Design — CIBC · 2022</p>
+      <p class="cs-label">CIBC · 2022</p>
       <h1 class="cs-title">Newcomers didn't need more information.<br>They needed someone who'd been there.</h1>
       <p class="cs-sub">How research across three cultures and two continents led to a content strategy grounded in lived experience — not institutional messaging.</p>
 
@@ -1766,12 +1850,19 @@
     </div>
   </section>
 
+    <div class="case-break">
+      <span class="case-break-discipline">Service Design</span>
+      <span class="case-break-sep">·</span>
+      <span class="case-break-name">Listening circles</span>
+      <div class="case-break-rule"></div>
+    </div>
+
     <!-- ══════════════════════════════════════════
          GENDER EQUITY
     ══════════════════════════════════════════ -->
   <section class="cs-page" id="gender">
     <div class="cs-wrap">
-      <p class="cs-label">Service Design — Diversity, Equity &amp; Inclusion · 2021</p>
+      <p class="cs-label">Diversity, Equity &amp; Inclusion · 2021</p>
       <h1 class="cs-title">Listening wasn't enough.<br>We designed for it.</h1>
 
       <div class="cs-pullquote" style="margin-bottom:2rem;">
@@ -1874,13 +1965,20 @@
     </div>
   </section>
 
+    <div class="case-break">
+      <span class="case-break-discipline">Foresight</span>
+      <span class="case-break-sep">·</span>
+      <span class="case-break-name">Assisted banking</span>
+      <div class="case-break-rule"></div>
+    </div>
+
     <!-- ══════════════════════════════════════════
-         RATE SETTING
+         STRATEGIC FUTURES
     ══════════════════════════════════════════ -->
     <section class="cs-page" id="futures">
     <div class="cs-wrap">
 
-      <p class="cs-label">Foresight — TD · 2024</p>
+      <p class="cs-label">TD · 2024</p>
       <h1 class="cs-title">Strategic futures: Assisted banking</h1>
       <p class="cs-sub">Most design teams work from what's known. This project was about what's uncertain — teaching foresight methodology inside a major bank and using it to map the forces that could reshape the assisted banking channel before the roadmap we were building had a chance to deliver.</p>
 
@@ -1970,13 +2068,20 @@
     </div>
   </section>
 
+  <div class="case-break">
+    <span class="case-break-discipline">Research</span>
+    <span class="case-break-sep">·</span>
+    <span class="case-break-name">Innovation &amp; Orgs — OCAD U</span>
+    <div class="case-break-rule"></div>
+  </div>
+
   <!-- ══════════════════════════════════════════
        MRP
   ══════════════════════════════════════════ -->
   <section class="cs-page" id="mrp">
     <div class="cs-wrap">
 
-      <p class="cs-label">Research — OCAD University · 2018</p>
+      <p class="cs-label">OCAD University · 2018</p>
       <h1 class="cs-title">Innovation in large organizations:<br>Insights into innovation practices in established organizations</h1>
       <p class="cs-sub">Submitted to OCAD University in partial fulfillment of the requirements for the degree of Master of Design in Strategic Foresight &amp; Innovation. &copy; Merwad Abdallah &amp; Lesley-Ann Foulds, 2019.</p>
 
@@ -2067,13 +2172,20 @@
     </div>
   </section>
 
+  <div class="case-break">
+    <span class="case-break-discipline">Foresight</span>
+    <span class="case-break-sep">·</span>
+    <span class="case-break-name">Precarious growing — OCAD U</span>
+    <div class="case-break-rule"></div>
+  </div>
+
     <!-- ══════════════════════════════════════════
          PRECARIOUS GROWING
     ══════════════════════════════════════════ -->
   <section class="cs-page" id="precarious">
     <div class="cs-wrap">
 
-      <p class="cs-label">Foresight — OCAD University · APF 1st Place Graduate Group Award · 2018</p>
+      <p class="cs-label">OCAD University · APF 1st Place Graduate Group Award · 2018</p>
       <h1 class="cs-title">Precarious growing:<br>The future of food production</h1>
       <p class="cs-sub">A full-cycle foresight project exploring North American food production to 2050 — from environmental scan through scenario development to a live immersive experience.<br><span style="display:block;font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--magenta);margin-top:0.75rem;">In collaboration with Kate Kudelka, Alana Boltwood &amp; Ashley Spiegel &mdash; Foresight Studio, MDes Strategic Foresight &amp; Innovation, OCAD University, Toronto</span></p>
 
